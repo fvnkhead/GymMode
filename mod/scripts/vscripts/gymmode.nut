@@ -63,7 +63,9 @@ void function OnPlayerKilled(entity victim, entity attacker, var damageInfo)
 
 void function OnClientDisconnected(entity player)
 {
-    delete file.playerMaxHealths[player]
+    if (player in file.playerMaxHealths) {
+        delete file.playerMaxHealths[player]
+    }
 }
 
 // victims get new max health after respawn
