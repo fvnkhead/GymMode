@@ -1,4 +1,4 @@
-global function NoobMode_Init
+global function GymMode_Init
 
 struct {
     bool enabled
@@ -12,27 +12,27 @@ struct {
     table<entity, int> playerMaxHealths
 } file
 
-void function NoobMode_Init()
+void function GymMode_Init()
 {
-    file.enabled = GetConVarBool("noobmode_enabled")
+    file.enabled = GetConVarBool("gymmode_enabled")
     if (!file.enabled) {
-        Log("NoobMode is disabled")
+        Log("GymMode is disabled")
         return
     }
 
-    file.midHealth = GetConVarInt("noobmode_mid_health")
-    file.maxHealth = GetConVarInt("noobmode_max_health")
-    file.minHealth = GetConVarInt("noobmode_min_health")
-    file.aboveMidChange = GetConVarInt("noobmode_above_mid_change")
-    file.belowMidChange = GetConVarInt("noobmode_below_mid_change")
-    file.showMaxHealth = GetConVarBool("noobmode_show_max_health")
+    file.midHealth = GetConVarInt("gymmode_mid_health")
+    file.maxHealth = GetConVarInt("gymmode_max_health")
+    file.minHealth = GetConVarInt("gymmode_min_health")
+    file.aboveMidChange = GetConVarInt("gymmode_above_mid_change")
+    file.belowMidChange = GetConVarInt("gymmode_below_mid_change")
+    file.showMaxHealth = GetConVarBool("gymmode_show_max_health")
 
     AddCallback_OnClientConnected(OnClientConnected)
     AddCallback_OnPlayerRespawned(OnPlayerRespawned)
     AddCallback_OnPlayerKilled(OnPlayerKilled)
     AddCallback_OnClientDisconnected(OnClientDisconnected)
 
-    Log("NoobMode is enabled")
+    Log("GymMode is enabled")
 }
 
 void function OnClientConnected(entity player)
@@ -115,5 +115,5 @@ void function ShowMaxHealth(entity player)
 
 void function Log(string s)
 {
-    print("[NoobMode] " + s)
+    print("[GymMode] " + s)
 }

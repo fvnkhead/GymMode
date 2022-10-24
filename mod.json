@@ -1,32 +1,31 @@
 {
-    "Name": "NoobMode",
+    "Name": "GymMode",
     "Description": "Beginner-friendly Northstar mod",
     "Version": "0.1.0",
-    "DownloadLink": "https://northstar.thunderstore.io/package/download/Example/Mod/",
     "LoadPriority": 1,
     "ConVars": [
-        // 1 = NoobMode enabled
+        // 1 = GymMode enabled
         // 0 = disabled
         {
-            "Name": "noobmode_enabled",
+            "Name": "gymmode_enabled",
             "DefaultValue": "1"
         },
 
         // starting health
         {
-            "Name": "noobmode_mid_health",
+            "Name": "gymmode_mid_health",
             "DefaultValue": "100"
         },
 
         // max health will not go above this value
         {
-            "Name": "noobmode_max_health",
+            "Name": "gymmode_max_health",
             "DefaultValue": "200"
         },
 
         // max health will not go below this value
         {
-            "Name": "noobmode_min_health",
+            "Name": "gymmode_min_health",
             "DefaultValue": "10"
         },
 
@@ -34,7 +33,7 @@
         //   A) add if a player dies at middle HP or above
         //   B) reduce if a player kills at above middle HP
         {
-            "Name": "noobmode_above_mid_change",
+            "Name": "gymmode_above_mid_change",
             "DefaultValue": "20"
         },
 
@@ -42,23 +41,23 @@
         //   A) reduce if a player kills at middle HP or less
         //   B) add if a player dies at below middle HP
         {
-            "Name": "noobmode_below_mid_change",
+            "Name": "gymmode_below_mid_change",
             "DefaultValue": "10"
         },
 
         // 1 = show current max health at left side of screen
         // 0 = disabled
         {
-            "Name": "noobmode_show_max_health",
+            "Name": "gymmode_show_max_health",
             "DefaultValue": "1"
         }
     ],
     "Scripts": [
         {
-            "Path": "noobmode.nut",
+            "Path": "gymmode.nut",
             "RunOn": "SERVER",
             "ServerCallback": {
-                "After": "NoobMode_Init"
+                "After": "GymMode_Init"
             }
         }
     ]
