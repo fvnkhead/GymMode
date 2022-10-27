@@ -34,7 +34,7 @@
         //   B) reduce if a player kills at above middle HP
         {
             "Name": "gymmode_above_mid_change",
-            "DefaultValue": "20"
+            "DefaultValue": "10"
         },
 
         // how much health to:
